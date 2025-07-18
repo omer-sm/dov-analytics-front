@@ -1,0 +1,1 @@
+export const BACKEND_URL = 'https://dov-analytics.omersm.workers.dev';
