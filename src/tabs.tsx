@@ -17,13 +17,18 @@ export const tabs = [
     element: <AnalyticsTab statistic="REPORT_SENT_ON_WHATSAPP" title="דוחות שנשלחו בווצאפ" />,
   },
   {
-    label: 'מצב חושך',
+    label: 'דוחות שהועתקו',
     value: 4,
+    element: <AnalyticsTab statistic="REPORT_COPIED" title="דוחות שהועתקו" />,
+  },
+  {
+    label: 'מצב חושך',
+    value: 5,
     element: <AnalyticsTab statistic="SET_DARK_MODE" title="שינויים למצב חושך" />,
   },
   {
     label: 'מצב אור',
-    value: 5,
+    value: 6,
     element: <AnalyticsTab statistic="SET_LIGHT_MODE" title="שינויים למצב אור" />,
   }
 ]
