@@ -14,8 +14,8 @@ export default function Menu({ currentTab, setCurrentTab }: MenuProps) {
       onChange={(_event, newValue) => setCurrentTab(newValue)}
       variant="scrollable"
     >
-      {tabs.map((tab) => (
-        <Tab key={tab.value} label={tab.label} value={tab.value} />
+      {tabs.map((tab, index) => (
+        <Tab key={index} label={tab.label} value={index} />
       ))}
     </Tabs>
   );

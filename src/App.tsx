@@ -9,7 +9,7 @@ import { queryClient } from './Api/queryClient';
 
 function App() {
   const [themeMode, setThemeMode] = useState<'light' | 'dark'>('light');
-  const [currentTab, setCurrentTab] = useState<number>(1);
+  const [currentTab, setCurrentTab] = useState<number>(0);
 
   return (
     <QueryClientProvider client={queryClient}>
@@ -18,7 +18,7 @@ function App() {
         <Box sx={{ m: 0, pt: '70px' }}>
           <TopBar {...{ themeMode, setThemeMode }} />
           <Menu {...{ currentTab, setCurrentTab }} />
-          <Stack>{tabs[currentTab - 1].element}</Stack>
+          <Stack>{tabs[currentTab].element}</Stack>
         </Box>
       </ThemeProvider>
     </QueryClientProvider>
