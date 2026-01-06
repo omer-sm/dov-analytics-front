@@ -1,10 +1,15 @@
-import AnalyticsTab from "./Components/AnalyticsTab";
-import OverviewTab from "./Components/OverviewTab";
+import AnalyticsTab from './Components/AnalyticsTab';
+import LastReportTab from './Components/LastReportTab';
+import OverviewTab from './Components/OverviewTab';
 
 export const tabs = [
   {
     label: 'מבט על',
     element: <OverviewTab />,
+  },
+  {
+    label: 'דוח אחרון',
+    element: <LastReportTab />,
   },
   {
     label: 'כניסות',
@@ -16,7 +21,9 @@ export const tabs = [
   },
   {
     label: 'דוחות שנשלחו',
-    element: <AnalyticsTab statistic="REPORT_SENT_ON_WHATSAPP" title="דוחות שנשלחו בווצאפ" />,
+    element: (
+      <AnalyticsTab statistic="REPORT_SENT_ON_WHATSAPP" title="דוחות שנשלחו בווצאפ" />
+    ),
   },
   {
     label: 'דוחות שהועתקו',
@@ -29,5 +36,5 @@ export const tabs = [
   {
     label: 'מצב אור',
     element: <AnalyticsTab statistic="SET_LIGHT_MODE" title="שינויים למצב אור" />,
-  }
-]
+  },
+];
