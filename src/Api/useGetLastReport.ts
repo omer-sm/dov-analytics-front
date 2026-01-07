@@ -37,16 +37,19 @@ export const useGetLastReport = () =>
     queryFn: () =>
       fetch(`${BACKEND_URL}/last-report`)
         .then((result) => result.json())
-        .then((rawReport: RawReport) => ({
-          reporterName: rawReport.reporter_name,
-          reportTime: new Date(rawReport.report_time),
-          location: rawReport.event_location,
-          peopleDamaged: rawReport.people_damaged === 1,
-          propertyDamaged: rawReport.property_damaged === 1,
-          personalActivity: rawReport.personal_activity,
-          teamActivity: rawReport.team_activity,
-          ...rawReport,
-          description: rawReport.event_description,
-          recommendations: rawReport.recommendations,
-        })),
+        .then(
+          (rawReport: RawReport): Report => ({
+            reporterName: rawReport.reporter_name,
+            reportTime: new Date(rawReport.report_time),
+            location: rawReport.event_location,
+            peopleDamaged: rawReport.people_damaged === 1,
+            propertyDamaged: rawReport.property_damaged === 1,
+            personalActivity: rawReport.personal_activity,
+            teamActivity: rawReport.team_activity,
+            severity: rawReport.severity,
+            situation: rawReport.situation,
+            description: rawReport.event_description,
+            recommendations: rawReport.recommendations,
+          })
+        ),
   });
